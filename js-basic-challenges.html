@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basic Challenges</title>
+</head>
+<body>
+    <h1>JavaScript Basic Challenges</h1>
+    <h2>
+        Challenge 1
+    </h2>
+
+    <script>
+        firstName = 'Jie'
+        lastName = 'Bai'
+        adjective = 'is the smartest one in the school'
+        primaryColor = ['red', 'blue', 'yellow']
+        secondaryColor = ['orange', 'green', 'purple']
+        var inputColor = prompt("pls enter a color", "");
+        inputColor = inputColor.toLowerCase()
+
+        if (primaryColor.includes(inputColor) ) {
+            console.log("Primary")
+        } else if (secondaryColor.includes(inputColor) ) {
+            console.log("Seconday")
+        } else {
+            console.log("none")
+        }
+        console.log(firstName)
+        console.log(lastName)
+        console.log(`${firstName} ${lastName} ${adjective}`)
+    </script>
+</body>
+</html>
