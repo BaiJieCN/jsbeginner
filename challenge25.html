@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 24</title>
+    <title>Challenge 25</title>
 </head>
 <body>
-    <h1>Challenge 24</h1>
+    <h1>Challenge 25</h1>
     <button>
         add a paragraph
     </button>
+
+    <button>
+        remove a paragraph
+    </button>
+
     <div>
         <p>here is the first paragraph</p>
     </div>
@@ -18,14 +23,21 @@
 
     <script>
         var divTag = document.querySelector('div')
-        var btn = document.querySelector('button')
-        btn.addEventListener('click', function(){
+        var addBtn = document.querySelectorAll('button')[0]
+        var removeBtn = document.querySelectorAll('button')[1]
+        addBtn.addEventListener('click', function(){
             // var newP = document.createElement('p')
             // var text = document.createTextNode('A new paragraph')
             // newP.appendChild(text)
             // divTag.appendChild(newP)
             divTag.innerHTML += '<p> new paragraph </p>'
         })
+
+        removeBtn.addEventListener('click', function(){
+            var allPs = document.querySelectorAll('p')
+            divTag.removeChild(divTag.children[allPs.length-1])
+        })
+
     </script>
 
 </body>
