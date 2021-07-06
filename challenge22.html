@@ -10,14 +10,18 @@
     <h1>JS Challenge 22</h1>
     <p>Here is a paragraph of text</p>
     <button>Turn Green Dammit!</button>
-
     <script>
-        var pTag = document.querySelector('p')
-        var btn = document.querySelector('button')
-        btn.addEventListener('click', function(){
+        pTag = document.querySelector('p');
+        btn = document.querySelector('button');
+        btn.addEventListener('mouseover', function(){
             pTag.style.color = 'blue'
         })
-
+        btn.addEventListener('click', function(){
+            pTag.style.color = 'red'
+        })
+        btn.addEventListener('mouseout', function(){
+            pTag.style.color = 'black'
+        })
     </script>
 
 </body>
