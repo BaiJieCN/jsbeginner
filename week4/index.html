@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Miles to Kilometers Converter</title>
+	
+	<!--/ /-------- Normalize CSS --------/ /-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	
+	<!--/ /-------- Google Fonts --------/ /-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans&display=swap" rel="stylesheet">
+	
+	<!--/ /-------- My Styles --------/ /-->
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<h1>Miles to Kilometers Converter</h1>
+	<button>switch</button>
+
+    <div class="container top">
+    	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
+        
+        <form method="post" action="somephpfile.php" id="convert">
+		<!-- <form id="convert"> -->
+        
+        	<input type="text" name="distance" id="distance" placeholder="distance">
+            <input type="submit" name="convertdist" value="Convert Distance">
+        
+        </form>
+    </div>
+    <div class="container bottom" id="answer">
+    	<h2 class="invisible">Answer goes here</h2>
+    </div>
+
+	<script>
+		var h1Tag = document.querySelector('h1')
+		var h2Tag = document.querySelector('h2')
+		var formTag = document.getElementById('convert')
+		console.log(formTag)
+		var btn = document.querySelector('button')
+		var m2k = true
+		var outNum
+
+		btn.addEventListener('click', function(event){
+			event.preventDefault();
+			if (m2k) {
+				m2k = false
+				h1Tag.innerHTML = "Kilometers to Miles Converter"
+			} else {
+				m2k = true
+				h1Tag.innerHTML = "Miles to Kilometers Converter"
+
+			}
+		})
+
+		formTag.addEventListener('submit', function(event){
+			event.preventDefault();
+			var inputNum = parseFloat(document.getElementById('distance').value)
+			if (inputNum) {
+				if (m2k) {
+					outNum = Math.round(inputNum * 1.609334 * 1000) / 1000
+				} else {
+					outNum = Math.round(inputNum / 1.609 * 1000) / 1000 
+				}
+                h2Tag.innerHTML = `<span style='color: red;'>${outNum}</span>`
+            } else {
+                alert('pls input a number')
+            }
+		})
+	</script>
+
+</body>
+</html>
