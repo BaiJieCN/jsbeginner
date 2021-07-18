@@ -13,12 +13,14 @@
 	<!--/ /-------- My Styles --------/ /-->
 	<link href="styles.css" rel="stylesheet">
 
+	<!--/ /-------- My Script --------/ /-->
+	<script src = 'script.js' defer></script>
 </head>
 
 <body>
 
 	<h1>Miles to Kilometers Converter</h1>
-	<button>switch</button>
+	<button id = 'btn' class="button">switch</button>
 
     <div class="container top">
     	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
@@ -35,42 +37,8 @@
     	<h2 class="invisible">Answer goes here</h2>
     </div>
 
-	<script>
-		var h1Tag = document.querySelector('h1')
-		var h2Tag = document.querySelector('h2')
-		var formTag = document.getElementById('convert')
-		console.log(formTag)
-		var btn = document.querySelector('button')
-		var m2k = true
-		var outNum
+    <p id="directions">Press the "K" key to switch to kilometer converstion, press the "M" key to switch to mile conversion</p>
 
-		btn.addEventListener('click', function(event){
-			event.preventDefault();
-			if (m2k) {
-				m2k = false
-				h1Tag.innerHTML = "Kilometers to Miles Converter"
-			} else {
-				m2k = true
-				h1Tag.innerHTML = "Miles to Kilometers Converter"
-
-			}
-		})
-
-		formTag.addEventListener('submit', function(event){
-			event.preventDefault();
-			var inputNum = parseFloat(document.getElementById('distance').value)
-			if (inputNum) {
-				if (m2k) {
-					outNum = Math.round(inputNum * 1.609334 * 1000) / 1000
-				} else {
-					outNum = Math.round(inputNum / 1.609 * 1000) / 1000 
-				}
-                h2Tag.innerHTML = `<span style='color: red;'>${outNum}</span>`
-            } else {
-                alert('pls input a number')
-            }
-		})
-	</script>
 
 </body>
 </html>
